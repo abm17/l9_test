@@ -1,14 +1,25 @@
-import argparse
+from parsing import cli_parser,get_filter_dict,parse_instances,parse_security_groups
+from pprint import pprint
+from filter import sg_filter
 
 
-parser = argparse.ArgumentParser(description='Prints a list of instance-ids to STDOUT that can be accessed '
-                                             'directly from a specific port, ip using a protocol')
-parser.add_argument("instance_file_path",help="")
-parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                    help='an integer for the accumulator')
-parser.add_argument('--sum', dest='accumulate', action='store_const',
-                    const=sum, default=max,
-                    help='sum the integers (default: find the max)')
+if __name__=='__main__':
+    parser = cli_parser()
+    args = parser.parse_args()
+    instances_file = args.instance_file_path
+    sg_file = args.sg_file_path
+    sg_file = args.sg_file_path
+    filter_dict = get_filter_dict(args)
+    pprint(filter_dict)
+    instance_sg = parse_instances(instances_file)
+    sg_rules_ingress,sg_rules_egress = parse_security_groups(sg_file)
+    sg_filtered_ingress = sg_filter(sg_rules_ingress,"ingress",**filter_dict)
+    pprint(sg_filtered_ingress)
 
-args = parser.parse_args()
-print(args.accumulate(args.integers))
+
+
+
+
+
+
+
