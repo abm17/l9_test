@@ -1,7 +1,4 @@
-import ijson,pprint
-
-instances_file = "instances.json"
-sg_file = "security_groups.json"
+import ijson
 
 
 def parse_instances(filename, structure_prefix="Reservations.item.Instances.item"):
@@ -45,12 +42,3 @@ def parse_security_groups(filename, structure_prefix="SecurityGroups.item"):
                 policy["protocol"] = permission["IpProtocol"]
                 sg_rules_egress[sg_id].append(policy)
         return sg_rules_ingress, sg_rules_egress
-
-
-
-sg_rules_ingress, sg_rules_egress = parse_security_groups("../security_groups.json")
-pprint.pprint(sg_rules_egress)
-pprint.pprint(sg_rules_ingress)
-
-
-
