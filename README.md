@@ -14,9 +14,9 @@ The prefix structure for the JSON file can be modified to support similar nested
   - **<sg_file_path>** - absolute/relative path to file containing security groups data
  -  --**include_port** - comma separated list of ports to be permitted in the filter. A value of -1 will skip the check for port
  - --**exclude_port**  - comma separated list of ports to be restricted in the filter.
- - -**include_ipv4** - comma separated list of IPv4 addresses/CIDR blocks to be restricted in the filter. A value of -1 will skip the check for permission/restriction of IPv4 addresses
+ - -**include_ipv4** - comma separated list of IPv4 addresses/CIDR blocks to be permitted in the filter. A value of -1 will skip the check for permission/restriction of IPv4 addresses
  - -**exclude_ipv4** - comma separated list of IPv4 addresses/CIDR blocks to be restricted in the filter. 
- - -**include_ipv6** - comma separated list of IPv6 addresses/CIDR blocks to be restricted in the filter. A value of -1 will skip the check for permission/restriction of IPv6 addresses
+ - -**include_ipv6** - comma separated list of IPv6 addresses/CIDR blocks to be permitted in the filter. A value of -1 will skip the check for permission/restriction of IPv6 addresses
  - -**exclude_ipv6** - comma separated list of IPv6 addresses/CIDR blocks to be restricted in the filter. 
  - -**include_protocol** - comma separated list of permitted protocols. A value of -1 will skip this check.
 - -**exclude_protocol** - comma separated list of permitted protocols. A value of -1 will skip this check.
