@@ -19,7 +19,7 @@ The prefix structure for the JSON file can be modified to support similar nested
  - -**include_ipv6** - comma separated list of IPv6 addresses/CIDR blocks to be permitted in the filter. A value of -1 will skip the check for permission/restriction of IPv6 addresses
  - -**exclude_ipv6** - comma separated list of IPv6 addresses/CIDR blocks to be restricted in the filter. 
  - -**include_protocol** - comma separated list of permitted protocols. A value of -1 will skip this check.
-- -**exclude_protocol** - comma separated list of permitted protocols. A value of -1 will skip this check.
+- -**exclude_protocol** - comma separated list of restricted protocols. A value of -1 will skip this check.
 
 ## Example Usage
 
