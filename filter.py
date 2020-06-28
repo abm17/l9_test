@@ -27,14 +27,14 @@ def check_ip_ranges(ip_ranges, include_ip, exclude_ip, mode):
 
 
 def sg_filter(sg_dict,mode,**filter_args):
-    include_port = filter_args.get("include_port",set())
+    include_port = filter_args.get("include_port",{"-1"})
     exclude_port = filter_args.get("exclude_port", set())
-    include_ipv4 = filter_args.get("include_ipv4", set())
+    include_ipv4 = filter_args.get("include_ipv4", {"0.0.0.0/0"})
     exclude_ipv4 = filter_args.get("exclude_ipv4", set())
-    include_ipv6 = filter_args.get("include_ipv6", set())
+    include_ipv6 = filter_args.get("include_ipv6", {"::/0"})
     exclude_ipv6 = filter_args.get("exclude_ipv6", set())
     exclude_protocol = filter_args.get("exclude_protocol", set())
-    include_protocol = filter_args.get("include_protocol", {})
+    include_protocol = filter_args.get("include_protocol", {"-1"})
     sg_all = sg_dict.keys()
     filtered_sgs = set()
 
